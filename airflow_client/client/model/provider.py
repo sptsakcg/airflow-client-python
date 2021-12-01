@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -99,8 +82,8 @@ class Provider(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'package_name': (str,),  # noqa: E501
             'description': (str,),  # noqa: E501
+            'package_name': (str,),  # noqa: E501
             'version': (str,),  # noqa: E501
         }
 
@@ -110,8 +93,8 @@ class Provider(ModelNormal):
 
 
     attribute_map = {
-        'package_name': 'package_name',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'package_name': 'package_name',  # noqa: E501
         'version': 'version',  # noqa: E501
     }
 
@@ -156,8 +139,8 @@ class Provider(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            package_name (str): The package name of the provider.. [optional]  # noqa: E501
             description (str): The description of the provider.. [optional]  # noqa: E501
+            package_name (str): The package name of the provider.. [optional]  # noqa: E501
             version (str): The version of the provider.. [optional]  # noqa: E501
         """
 
@@ -240,8 +223,8 @@ class Provider(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            package_name (str): The package name of the provider.. [optional]  # noqa: E501
             description (str): The description of the provider.. [optional]  # noqa: E501
+            package_name (str): The package name of the provider.. [optional]  # noqa: E501
             version (str): The version of the provider.. [optional]  # noqa: E501
         """
 

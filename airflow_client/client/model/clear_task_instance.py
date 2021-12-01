@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -103,14 +86,14 @@ class ClearTaskInstance(ModelNormal):
         """
         return {
             'dry_run': (bool,),  # noqa: E501
-            'task_ids': ([str],),  # noqa: E501
-            'start_date': (str,),  # noqa: E501
             'end_date': (str,),  # noqa: E501
+            'include_parentdag': (bool,),  # noqa: E501
+            'include_subdags': (bool,),  # noqa: E501
             'only_failed': (bool,),  # noqa: E501
             'only_running': (bool,),  # noqa: E501
-            'include_subdags': (bool,),  # noqa: E501
-            'include_parentdag': (bool,),  # noqa: E501
             'reset_dag_runs': (bool,),  # noqa: E501
+            'start_date': (str,),  # noqa: E501
+            'task_ids': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -120,14 +103,14 @@ class ClearTaskInstance(ModelNormal):
 
     attribute_map = {
         'dry_run': 'dry_run',  # noqa: E501
-        'task_ids': 'task_ids',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
         'end_date': 'end_date',  # noqa: E501
+        'include_parentdag': 'include_parentdag',  # noqa: E501
+        'include_subdags': 'include_subdags',  # noqa: E501
         'only_failed': 'only_failed',  # noqa: E501
         'only_running': 'only_running',  # noqa: E501
-        'include_subdags': 'include_subdags',  # noqa: E501
-        'include_parentdag': 'include_parentdag',  # noqa: E501
         'reset_dag_runs': 'reset_dag_runs',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'task_ids': 'task_ids',  # noqa: E501
     }
 
     read_only_vars = {
@@ -172,14 +155,14 @@ class ClearTaskInstance(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dry_run (bool): If set, don't actually run this operation. The response will contain a list of task instances planned to be cleaned, but not modified in any way. . [optional] if omitted the server will use the default value of True  # noqa: E501
-            task_ids ([str]): A list of task ids to clear.. [optional]  # noqa: E501
-            start_date (str): The minimum execution date to clear.. [optional]  # noqa: E501
             end_date (str): The maximum execution date to clear.. [optional]  # noqa: E501
+            include_parentdag (bool): Clear tasks in the parent dag of the subdag.. [optional]  # noqa: E501
+            include_subdags (bool): Clear tasks in subdags and clear external tasks indicated by ExternalTaskMarker.. [optional]  # noqa: E501
             only_failed (bool): Only clear failed tasks.. [optional] if omitted the server will use the default value of True  # noqa: E501
             only_running (bool): Only clear running tasks.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            include_subdags (bool): Clear tasks in subdags and clear external tasks indicated by ExternalTaskMarker.. [optional]  # noqa: E501
-            include_parentdag (bool): Clear tasks in the parent dag of the subdag.. [optional]  # noqa: E501
             reset_dag_runs (bool): Set state of DAG runs to RUNNING.. [optional]  # noqa: E501
+            start_date (str): The minimum execution date to clear.. [optional]  # noqa: E501
+            task_ids ([str]): A list of task ids to clear.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -262,14 +245,14 @@ class ClearTaskInstance(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dry_run (bool): If set, don't actually run this operation. The response will contain a list of task instances planned to be cleaned, but not modified in any way. . [optional] if omitted the server will use the default value of True  # noqa: E501
-            task_ids ([str]): A list of task ids to clear.. [optional]  # noqa: E501
-            start_date (str): The minimum execution date to clear.. [optional]  # noqa: E501
             end_date (str): The maximum execution date to clear.. [optional]  # noqa: E501
+            include_parentdag (bool): Clear tasks in the parent dag of the subdag.. [optional]  # noqa: E501
+            include_subdags (bool): Clear tasks in subdags and clear external tasks indicated by ExternalTaskMarker.. [optional]  # noqa: E501
             only_failed (bool): Only clear failed tasks.. [optional] if omitted the server will use the default value of True  # noqa: E501
             only_running (bool): Only clear running tasks.. [optional] if omitted the server will use the default value of False  # noqa: E501
-            include_subdags (bool): Clear tasks in subdags and clear external tasks indicated by ExternalTaskMarker.. [optional]  # noqa: E501
-            include_parentdag (bool): Clear tasks in the parent dag of the subdag.. [optional]  # noqa: E501
             reset_dag_runs (bool): Set state of DAG runs to RUNNING.. [optional]  # noqa: E501
+            start_date (str): The minimum execution date to clear.. [optional]  # noqa: E501
+            task_ids ([str]): A list of task ids to clear.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

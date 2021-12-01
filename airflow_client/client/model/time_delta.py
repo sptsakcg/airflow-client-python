@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -101,8 +84,8 @@ class TimeDelta(ModelNormal):
         return {
             'type': (str,),  # noqa: E501
             'days': (int,),  # noqa: E501
-            'seconds': (int,),  # noqa: E501
             'microseconds': (int,),  # noqa: E501
+            'seconds': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -113,8 +96,8 @@ class TimeDelta(ModelNormal):
     attribute_map = {
         'type': '__type',  # noqa: E501
         'days': 'days',  # noqa: E501
-        'seconds': 'seconds',  # noqa: E501
         'microseconds': 'microseconds',  # noqa: E501
+        'seconds': 'seconds',  # noqa: E501
     }
 
     read_only_vars = {
@@ -124,14 +107,14 @@ class TimeDelta(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, days, seconds, microseconds, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, days, microseconds, seconds, *args, **kwargs):  # noqa: E501
         """TimeDelta - a model defined in OpenAPI
 
         Args:
             type (str):
             days (int):
-            seconds (int):
             microseconds (int):
+            seconds (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -193,8 +176,8 @@ class TimeDelta(ModelNormal):
 
         self.type = type
         self.days = days
-        self.seconds = seconds
         self.microseconds = microseconds
+        self.seconds = seconds
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -215,14 +198,14 @@ class TimeDelta(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, days, seconds, microseconds, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, days, microseconds, seconds, *args, **kwargs):  # noqa: E501
         """TimeDelta - a model defined in OpenAPI
 
         Args:
             type (str):
             days (int):
-            seconds (int):
             microseconds (int):
+            seconds (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -282,8 +265,8 @@ class TimeDelta(ModelNormal):
 
         self.type = type
         self.days = days
-        self.seconds = seconds
         self.microseconds = microseconds
+        self.seconds = seconds
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

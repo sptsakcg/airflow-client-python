@@ -1,25 +1,6 @@
-<!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
- -->
-
 # Apache Airflow Python Client.DAGApi
 
-All URIs are relative to *http://localhost/api/v1*
+All URIs are relative to *https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,7 +25,6 @@ Deletes all metadata related to the DAG, including finished DAG Runs and Tasks. 
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -52,25 +32,15 @@ import airflow_client.client
 from airflow_client.client.api import dag_api
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
@@ -96,7 +66,7 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -126,7 +96,6 @@ Presents only information available in database (DAGModel). If you need detailed
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -135,25 +104,15 @@ from airflow_client.client.api import dag_api
 from airflow_client.client.model.dag import DAG
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
@@ -180,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -208,7 +167,6 @@ The response contains many DAG attributes, so the response can be large. If poss
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -217,25 +175,15 @@ from airflow_client.client.api import dag_api
 from airflow_client.client.model.dag_detail import DAGDetail
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
@@ -262,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -282,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_dag_source**
-> InlineResponse2001 get_dag_source(file_token)
+> InlineResponse200 get_dag_source(file_token)
 
 Get a source code
 
@@ -290,34 +238,23 @@ Get a source code using file token.
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
 import airflow_client.client
 from airflow_client.client.api import dag_api
-from airflow_client.client.model.inline_response2001 import InlineResponse2001
 from airflow_client.client.model.error import Error
+from airflow_client.client.model.inline_response200 import InlineResponse200
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     file_token = "file_token_example" # str | The key containing the encrypted path to the file. Encryption and decryption take place only on the server. This prevents the client from reading an non-DAG file. This also ensures API extensibility, because the format of encrypted data may change. 
@@ -340,11 +277,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -371,7 +308,6 @@ List DAGs
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -380,25 +316,15 @@ from airflow_client.client.api import dag_api
 from airflow_client.client.model.dag_collection import DAGCollection
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     limit = 100 # int | The numbers of items to return. (optional) if omitted the server will use the default value of 100
@@ -436,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -460,7 +386,6 @@ Get simplified representation of a task
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -469,25 +394,15 @@ from airflow_client.client.api import dag_api
 from airflow_client.client.model.task import Task
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
@@ -516,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -542,7 +457,6 @@ Get tasks for DAG
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -551,25 +465,15 @@ from airflow_client.client.api import dag_api
 from airflow_client.client.model.error import Error
 from airflow_client.client.model.task_collection import TaskCollection
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
@@ -607,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -633,7 +537,6 @@ Update a DAG
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -642,25 +545,15 @@ from airflow_client.client.api import dag_api
 from airflow_client.client.model.dag import DAG
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
@@ -704,7 +597,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -732,7 +625,6 @@ Clears a set of task instances associated with the DAG for a specified date rang
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -742,40 +634,30 @@ from airflow_client.client.model.clear_task_instance import ClearTaskInstance
 from airflow_client.client.model.error import Error
 from airflow_client.client.model.task_instance_reference_collection import TaskInstanceReferenceCollection
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
     clear_task_instance = ClearTaskInstance(
         dry_run=True,
+        end_date="end_date_example",
+        include_parentdag=True,
+        include_subdags=True,
+        only_failed=True,
+        only_running=False,
+        reset_dag_runs=True,
+        start_date="start_date_example",
         task_ids=[
             "task_ids_example",
         ],
-        start_date="start_date_example",
-        end_date="end_date_example",
-        only_failed=True,
-        only_running=False,
-        include_subdags=True,
-        include_parentdag=True,
-        reset_dag_runs=True,
     ) # ClearTaskInstance | Parameters of action
 
     # example passing only required values which don't have defaults set
@@ -801,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -829,7 +711,6 @@ Updates the state for multiple task instances simultaneously.
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -839,37 +720,27 @@ from airflow_client.client.model.update_task_instances_state import UpdateTaskIn
 from airflow_client.client.model.error import Error
 from airflow_client.client.model.task_instance_reference_collection import TaskInstanceReferenceCollection
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = dag_api.DAGApi(api_client)
     dag_id = "dag_id_example" # str | The DAG ID.
     update_task_instances_state = UpdateTaskInstancesState(
         dry_run=True,
-        task_id="task_id_example",
         execution_date="execution_date_example",
-        include_upstream=True,
         include_downstream=True,
         include_future=True,
         include_past=True,
+        include_upstream=True,
         new_state="success",
+        task_id="task_id_example",
     ) # UpdateTaskInstancesState | Parameters of action
 
     # example passing only required values which don't have defaults set
@@ -895,7 +766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 

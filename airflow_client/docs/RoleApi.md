@@ -1,25 +1,6 @@
-<!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
- -->
-
 # Apache Airflow Python Client.RoleApi
 
-All URIs are relative to *http://localhost/api/v1*
+All URIs are relative to *https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,7 +18,6 @@ Delete a role
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -45,25 +25,15 @@ import airflow_client.client
 from airflow_client.client.api import role_api
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = role_api.RoleApi(api_client)
     role_name = "role_name_example" # str | The role name
@@ -89,7 +59,7 @@ void (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -116,7 +86,6 @@ Get a role
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -125,25 +94,15 @@ from airflow_client.client.api import role_api
 from airflow_client.client.model.role import Role
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = role_api.RoleApi(api_client)
     role_name = "role_name_example" # str | The role name
@@ -170,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -196,7 +155,6 @@ List roles
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -205,25 +163,15 @@ from airflow_client.client.api import role_api
 from airflow_client.client.model.error import Error
 from airflow_client.client.model.role_collection import RoleCollection
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = role_api.RoleApi(api_client)
     limit = 100 # int | The numbers of items to return. (optional) if omitted the server will use the default value of 100
@@ -255,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -280,7 +228,6 @@ Update a role
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -289,30 +236,19 @@ from airflow_client.client.api import role_api
 from airflow_client.client.model.role import Role
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = role_api.RoleApi(api_client)
     role_name = "role_name_example" # str | The role name
     role = Role(
-        name="name_example",
         actions=[
             ActionResource(
                 action=Action(
@@ -323,6 +259,7 @@ with client.ApiClient(configuration) as api_client:
                 ),
             ),
         ],
+        name="name_example",
     ) # Role | 
     update_mask = [
         "update_mask_example",
@@ -361,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 
@@ -388,7 +325,6 @@ Create a role
 
 ### Example
 
-* Basic Authentication (Basic):
 
 ```python
 import time
@@ -397,29 +333,18 @@ from airflow_client.client.api import role_api
 from airflow_client.client.model.role import Role
 from airflow_client.client.model.error import Error
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost/api/v1
+# Defining the host is optional and defaults to https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1
 # See configuration.py for a list of all supported configuration parameters.
 configuration = client.Configuration(
-    host = "http://localhost/api/v1"
+    host = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: Basic
-configuration = client.Configuration(
-    username = 'YOUR_USERNAME',
-    password = 'YOUR_PASSWORD'
-)
 
 # Enter a context with an instance of the API client
-with client.ApiClient(configuration) as api_client:
+with client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = role_api.RoleApi(api_client)
     role = Role(
-        name="name_example",
         actions=[
             ActionResource(
                 action=Action(
@@ -430,6 +355,7 @@ with client.ApiClient(configuration) as api_client:
                 ),
             ),
         ],
+        name="name_example",
     ) # Role | 
 
     # example passing only required values which don't have defaults set
@@ -454,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic), [Kerberos](../README.md#Kerberos)
+No authorization required
 
 ### HTTP request headers
 

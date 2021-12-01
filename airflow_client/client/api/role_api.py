@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -58,10 +41,7 @@ class RoleApi(object):
         self.delete_role_endpoint = _Endpoint(
             settings={
                 'response_type': None,
-                'auth': [
-                    'Basic',
-                    'Kerberos'
-                ],
+                'auth': [],
                 'endpoint_path': '/roles/{role_name}',
                 'operation_id': 'delete_role',
                 'http_method': 'DELETE',
@@ -110,10 +90,7 @@ class RoleApi(object):
         self.get_role_endpoint = _Endpoint(
             settings={
                 'response_type': (Role,),
-                'auth': [
-                    'Basic',
-                    'Kerberos'
-                ],
+                'auth': [],
                 'endpoint_path': '/roles/{role_name}',
                 'operation_id': 'get_role',
                 'http_method': 'GET',
@@ -162,10 +139,7 @@ class RoleApi(object):
         self.get_roles_endpoint = _Endpoint(
             settings={
                 'response_type': (RoleCollection,),
-                'auth': [
-                    'Basic',
-                    'Kerberos'
-                ],
+                'auth': [],
                 'endpoint_path': '/roles',
                 'operation_id': 'get_roles',
                 'http_method': 'GET',
@@ -227,10 +201,7 @@ class RoleApi(object):
         self.patch_role_endpoint = _Endpoint(
             settings={
                 'response_type': (Role,),
-                'auth': [
-                    'Basic',
-                    'Kerberos'
-                ],
+                'auth': [],
                 'endpoint_path': '/roles/{role_name}',
                 'operation_id': 'patch_role',
                 'http_method': 'PATCH',
@@ -292,10 +263,7 @@ class RoleApi(object):
         self.post_role_endpoint = _Endpoint(
             settings={
                 'response_type': (Role,),
-                'auth': [
-                    'Basic',
-                    'Kerberos'
-                ],
+                'auth': [],
                 'endpoint_path': '/roles',
                 'operation_id': 'post_role',
                 'http_method': 'POST',

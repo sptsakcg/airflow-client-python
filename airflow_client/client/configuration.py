@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -127,7 +110,7 @@ conf = client.Configuration(
                  ):
         """Constructor
         """
-        self._base_path = "http://localhost/api/v1" if host is None else host
+        self._base_path = "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -419,7 +402,7 @@ conf = client.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0.0\n"\
-               "SDK Package Version: 2.2.0".\
+               "SDK Package Version: 2.2.1".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):
@@ -429,8 +412,8 @@ conf = client.Configuration(
         """
         return [
             {
-                'url': "/api/v1",
-                'description': "Apache Airflow Stable API.",
+                'url': "https://airflow.datalakefoundation.aws-dev.capgroup.com/api/v1",
+                'description': "No description provided",
             }
         ]
 

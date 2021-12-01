@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -99,14 +82,14 @@ class EventLog(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'event_log_id': (int,),  # noqa: E501
-            'when': (datetime,),  # noqa: E501
             'dag_id': (str, none_type,),  # noqa: E501
-            'task_id': (str, none_type,),  # noqa: E501
             'event': (str,),  # noqa: E501
+            'event_log_id': (int,),  # noqa: E501
             'execution_date': (datetime, none_type,),  # noqa: E501
-            'owner': (str,),  # noqa: E501
             'extra': (str, none_type,),  # noqa: E501
+            'owner': (str,),  # noqa: E501
+            'task_id': (str, none_type,),  # noqa: E501
+            'when': (datetime,),  # noqa: E501
         }
 
     @cached_property
@@ -115,25 +98,25 @@ class EventLog(ModelNormal):
 
 
     attribute_map = {
-        'event_log_id': 'event_log_id',  # noqa: E501
-        'when': 'when',  # noqa: E501
         'dag_id': 'dag_id',  # noqa: E501
-        'task_id': 'task_id',  # noqa: E501
         'event': 'event',  # noqa: E501
+        'event_log_id': 'event_log_id',  # noqa: E501
         'execution_date': 'execution_date',  # noqa: E501
-        'owner': 'owner',  # noqa: E501
         'extra': 'extra',  # noqa: E501
+        'owner': 'owner',  # noqa: E501
+        'task_id': 'task_id',  # noqa: E501
+        'when': 'when',  # noqa: E501
     }
 
     read_only_vars = {
-        'event_log_id',  # noqa: E501
-        'when',  # noqa: E501
         'dag_id',  # noqa: E501
-        'task_id',  # noqa: E501
         'event',  # noqa: E501
+        'event_log_id',  # noqa: E501
         'execution_date',  # noqa: E501
-        'owner',  # noqa: E501
         'extra',  # noqa: E501
+        'owner',  # noqa: E501
+        'task_id',  # noqa: E501
+        'when',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -174,14 +157,14 @@ class EventLog(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            event_log_id (int): The event log ID. [optional]  # noqa: E501
-            when (datetime): The time when these events happened.. [optional]  # noqa: E501
             dag_id (str, none_type): The DAG ID. [optional]  # noqa: E501
-            task_id (str, none_type): The DAG ID. [optional]  # noqa: E501
             event (str): A key describing the type of event.. [optional]  # noqa: E501
+            event_log_id (int): The event log ID. [optional]  # noqa: E501
             execution_date (datetime, none_type): When the event was dispatched for an object having execution_date, the value of this field. . [optional]  # noqa: E501
-            owner (str): Name of the user who triggered these events a.. [optional]  # noqa: E501
             extra (str, none_type): Other information that was not included in the other fields, e.g. the complete CLI command. . [optional]  # noqa: E501
+            owner (str): Name of the user who triggered these events a.. [optional]  # noqa: E501
+            task_id (str, none_type): The DAG ID. [optional]  # noqa: E501
+            when (datetime): The time when these events happened.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -263,14 +246,14 @@ class EventLog(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            event_log_id (int): The event log ID. [optional]  # noqa: E501
-            when (datetime): The time when these events happened.. [optional]  # noqa: E501
             dag_id (str, none_type): The DAG ID. [optional]  # noqa: E501
-            task_id (str, none_type): The DAG ID. [optional]  # noqa: E501
             event (str): A key describing the type of event.. [optional]  # noqa: E501
+            event_log_id (int): The event log ID. [optional]  # noqa: E501
             execution_date (datetime, none_type): When the event was dispatched for an object having execution_date, the value of this field. . [optional]  # noqa: E501
-            owner (str): Name of the user who triggered these events a.. [optional]  # noqa: E501
             extra (str, none_type): Other information that was not included in the other fields, e.g. the complete CLI command. . [optional]  # noqa: E501
+            owner (str): Name of the user who triggered these events a.. [optional]  # noqa: E501
+            task_id (str, none_type): The DAG ID. [optional]  # noqa: E501
+            when (datetime): The time when these events happened.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

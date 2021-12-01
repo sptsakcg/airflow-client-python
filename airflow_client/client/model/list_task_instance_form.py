@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -100,17 +83,17 @@ class ListTaskInstanceForm(ModelNormal):
         """
         return {
             'dag_ids': ([str],),  # noqa: E501
-            'execution_date_gte': (datetime,),  # noqa: E501
-            'execution_date_lte': (datetime,),  # noqa: E501
-            'start_date_gte': (datetime,),  # noqa: E501
-            'start_date_lte': (datetime,),  # noqa: E501
-            'end_date_gte': (datetime,),  # noqa: E501
-            'end_date_lte': (datetime,),  # noqa: E501
             'duration_gte': (float,),  # noqa: E501
             'duration_lte': (float,),  # noqa: E501
-            'state': ([str],),  # noqa: E501
+            'end_date_gte': (datetime,),  # noqa: E501
+            'end_date_lte': (datetime,),  # noqa: E501
+            'execution_date_gte': (datetime,),  # noqa: E501
+            'execution_date_lte': (datetime,),  # noqa: E501
             'pool': ([str],),  # noqa: E501
             'queue': ([str],),  # noqa: E501
+            'start_date_gte': (datetime,),  # noqa: E501
+            'start_date_lte': (datetime,),  # noqa: E501
+            'state': ([str],),  # noqa: E501
         }
 
     @cached_property
@@ -120,17 +103,17 @@ class ListTaskInstanceForm(ModelNormal):
 
     attribute_map = {
         'dag_ids': 'dag_ids',  # noqa: E501
-        'execution_date_gte': 'execution_date_gte',  # noqa: E501
-        'execution_date_lte': 'execution_date_lte',  # noqa: E501
-        'start_date_gte': 'start_date_gte',  # noqa: E501
-        'start_date_lte': 'start_date_lte',  # noqa: E501
-        'end_date_gte': 'end_date_gte',  # noqa: E501
-        'end_date_lte': 'end_date_lte',  # noqa: E501
         'duration_gte': 'duration_gte',  # noqa: E501
         'duration_lte': 'duration_lte',  # noqa: E501
-        'state': 'state',  # noqa: E501
+        'end_date_gte': 'end_date_gte',  # noqa: E501
+        'end_date_lte': 'end_date_lte',  # noqa: E501
+        'execution_date_gte': 'execution_date_gte',  # noqa: E501
+        'execution_date_lte': 'execution_date_lte',  # noqa: E501
         'pool': 'pool',  # noqa: E501
         'queue': 'queue',  # noqa: E501
+        'start_date_gte': 'start_date_gte',  # noqa: E501
+        'start_date_lte': 'start_date_lte',  # noqa: E501
+        'state': 'state',  # noqa: E501
     }
 
     read_only_vars = {
@@ -175,17 +158,17 @@ class ListTaskInstanceForm(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dag_ids ([str]): Return objects with specific DAG IDs. The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
-            execution_date_gte (datetime): Returns objects greater or equal to the specified date.  This can be combined with execution_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
-            execution_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with execution_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
-            start_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
-            start_date_lte (datetime): Returns objects less or equal the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
-            end_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
-            end_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
             duration_gte (float): Returns objects greater than or equal to the specified values.  This can be combined with duration_lte parameter to receive only the selected period. . [optional]  # noqa: E501
             duration_lte (float): Returns objects less than or equal to the specified values.  This can be combined with duration_gte parameter to receive only the selected range. . [optional]  # noqa: E501
-            state ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
+            end_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
+            end_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
+            execution_date_gte (datetime): Returns objects greater or equal to the specified date.  This can be combined with execution_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
+            execution_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with execution_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
             pool ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
             queue ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
+            start_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
+            start_date_lte (datetime): Returns objects less or equal the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
+            state ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -268,17 +251,17 @@ class ListTaskInstanceForm(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dag_ids ([str]): Return objects with specific DAG IDs. The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
-            execution_date_gte (datetime): Returns objects greater or equal to the specified date.  This can be combined with execution_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
-            execution_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with execution_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
-            start_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
-            start_date_lte (datetime): Returns objects less or equal the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
-            end_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
-            end_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
             duration_gte (float): Returns objects greater than or equal to the specified values.  This can be combined with duration_lte parameter to receive only the selected period. . [optional]  # noqa: E501
             duration_lte (float): Returns objects less than or equal to the specified values.  This can be combined with duration_gte parameter to receive only the selected range. . [optional]  # noqa: E501
-            state ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
+            end_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
+            end_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
+            execution_date_gte (datetime): Returns objects greater or equal to the specified date.  This can be combined with execution_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
+            execution_date_lte (datetime): Returns objects less than or equal to the specified date.  This can be combined with execution_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
             pool ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
             queue ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
+            start_date_gte (datetime): Returns objects greater or equal the specified date.  This can be combined with start_date_lte parameter to receive only the selected period. . [optional]  # noqa: E501
+            start_date_lte (datetime): Returns objects less or equal the specified date.  This can be combined with start_date_gte parameter to receive only the selected period. . [optional]  # noqa: E501
+            state ([str]): The value can be repeated to retrieve multiple matching values (OR condition).. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

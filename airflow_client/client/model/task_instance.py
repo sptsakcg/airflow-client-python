@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -107,26 +90,26 @@ class TaskInstance(ModelNormal):
         """
         lazy_import()
         return {
-            'task_id': (str,),  # noqa: E501
             'dag_id': (str,),  # noqa: E501
-            'execution_date': (str,),  # noqa: E501
-            'start_date': (str, none_type,),  # noqa: E501
-            'end_date': (str, none_type,),  # noqa: E501
             'duration': (float, none_type,),  # noqa: E501
-            'state': (TaskState,),  # noqa: E501
-            'try_number': (int,),  # noqa: E501
-            'max_tries': (int,),  # noqa: E501
+            'end_date': (str, none_type,),  # noqa: E501
+            'execution_date': (str,),  # noqa: E501
+            'executor_config': (str,),  # noqa: E501
             'hostname': (str,),  # noqa: E501
-            'unixname': (str,),  # noqa: E501
+            'max_tries': (int,),  # noqa: E501
+            'operator': (str, none_type,),  # noqa: E501
+            'pid': (int, none_type,),  # noqa: E501
             'pool': (str,),  # noqa: E501
             'pool_slots': (int,),  # noqa: E501
-            'queue': (str,),  # noqa: E501
             'priority_weight': (int,),  # noqa: E501
-            'operator': (str, none_type,),  # noqa: E501
+            'queue': (str,),  # noqa: E501
             'queued_when': (str, none_type,),  # noqa: E501
-            'pid': (int, none_type,),  # noqa: E501
-            'executor_config': (str,),  # noqa: E501
             'sla_miss': (SLAMiss,),  # noqa: E501
+            'start_date': (str, none_type,),  # noqa: E501
+            'state': (TaskState,),  # noqa: E501
+            'task_id': (str,),  # noqa: E501
+            'try_number': (int,),  # noqa: E501
+            'unixname': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -135,26 +118,26 @@ class TaskInstance(ModelNormal):
 
 
     attribute_map = {
-        'task_id': 'task_id',  # noqa: E501
         'dag_id': 'dag_id',  # noqa: E501
-        'execution_date': 'execution_date',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
-        'end_date': 'end_date',  # noqa: E501
         'duration': 'duration',  # noqa: E501
-        'state': 'state',  # noqa: E501
-        'try_number': 'try_number',  # noqa: E501
-        'max_tries': 'max_tries',  # noqa: E501
+        'end_date': 'end_date',  # noqa: E501
+        'execution_date': 'execution_date',  # noqa: E501
+        'executor_config': 'executor_config',  # noqa: E501
         'hostname': 'hostname',  # noqa: E501
-        'unixname': 'unixname',  # noqa: E501
+        'max_tries': 'max_tries',  # noqa: E501
+        'operator': 'operator',  # noqa: E501
+        'pid': 'pid',  # noqa: E501
         'pool': 'pool',  # noqa: E501
         'pool_slots': 'pool_slots',  # noqa: E501
-        'queue': 'queue',  # noqa: E501
         'priority_weight': 'priority_weight',  # noqa: E501
-        'operator': 'operator',  # noqa: E501
+        'queue': 'queue',  # noqa: E501
         'queued_when': 'queued_when',  # noqa: E501
-        'pid': 'pid',  # noqa: E501
-        'executor_config': 'executor_config',  # noqa: E501
         'sla_miss': 'sla_miss',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'state': 'state',  # noqa: E501
+        'task_id': 'task_id',  # noqa: E501
+        'try_number': 'try_number',  # noqa: E501
+        'unixname': 'unixname',  # noqa: E501
     }
 
     read_only_vars = {
@@ -198,26 +181,26 @@ class TaskInstance(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            task_id (str): [optional]  # noqa: E501
             dag_id (str): [optional]  # noqa: E501
-            execution_date (str): [optional]  # noqa: E501
-            start_date (str, none_type): [optional]  # noqa: E501
-            end_date (str, none_type): [optional]  # noqa: E501
             duration (float, none_type): [optional]  # noqa: E501
-            state (TaskState): [optional]  # noqa: E501
-            try_number (int): [optional]  # noqa: E501
-            max_tries (int): [optional]  # noqa: E501
+            end_date (str, none_type): [optional]  # noqa: E501
+            execution_date (str): [optional]  # noqa: E501
+            executor_config (str): [optional]  # noqa: E501
             hostname (str): [optional]  # noqa: E501
-            unixname (str): [optional]  # noqa: E501
+            max_tries (int): [optional]  # noqa: E501
+            operator (str, none_type): [optional]  # noqa: E501
+            pid (int, none_type): [optional]  # noqa: E501
             pool (str): [optional]  # noqa: E501
             pool_slots (int): [optional]  # noqa: E501
-            queue (str): [optional]  # noqa: E501
             priority_weight (int): [optional]  # noqa: E501
-            operator (str, none_type): [optional]  # noqa: E501
+            queue (str): [optional]  # noqa: E501
             queued_when (str, none_type): [optional]  # noqa: E501
-            pid (int, none_type): [optional]  # noqa: E501
-            executor_config (str): [optional]  # noqa: E501
             sla_miss (SLAMiss): [optional]  # noqa: E501
+            start_date (str, none_type): [optional]  # noqa: E501
+            state (TaskState): [optional]  # noqa: E501
+            task_id (str): [optional]  # noqa: E501
+            try_number (int): [optional]  # noqa: E501
+            unixname (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -299,26 +282,26 @@ class TaskInstance(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            task_id (str): [optional]  # noqa: E501
             dag_id (str): [optional]  # noqa: E501
-            execution_date (str): [optional]  # noqa: E501
-            start_date (str, none_type): [optional]  # noqa: E501
-            end_date (str, none_type): [optional]  # noqa: E501
             duration (float, none_type): [optional]  # noqa: E501
-            state (TaskState): [optional]  # noqa: E501
-            try_number (int): [optional]  # noqa: E501
-            max_tries (int): [optional]  # noqa: E501
+            end_date (str, none_type): [optional]  # noqa: E501
+            execution_date (str): [optional]  # noqa: E501
+            executor_config (str): [optional]  # noqa: E501
             hostname (str): [optional]  # noqa: E501
-            unixname (str): [optional]  # noqa: E501
+            max_tries (int): [optional]  # noqa: E501
+            operator (str, none_type): [optional]  # noqa: E501
+            pid (int, none_type): [optional]  # noqa: E501
             pool (str): [optional]  # noqa: E501
             pool_slots (int): [optional]  # noqa: E501
-            queue (str): [optional]  # noqa: E501
             priority_weight (int): [optional]  # noqa: E501
-            operator (str, none_type): [optional]  # noqa: E501
+            queue (str): [optional]  # noqa: E501
             queued_when (str, none_type): [optional]  # noqa: E501
-            pid (int, none_type): [optional]  # noqa: E501
-            executor_config (str): [optional]  # noqa: E501
             sla_miss (SLAMiss): [optional]  # noqa: E501
+            start_date (str, none_type): [optional]  # noqa: E501
+            state (TaskState): [optional]  # noqa: E501
+            task_id (str): [optional]  # noqa: E501
+            try_number (int): [optional]  # noqa: E501
+            unixname (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -118,28 +101,28 @@ class Task(ModelNormal):
         lazy_import()
         return {
             'class_ref': (ClassReference,),  # noqa: E501
-            'task_id': (str,),  # noqa: E501
-            'owner': (str,),  # noqa: E501
-            'start_date': (datetime,),  # noqa: E501
-            'end_date': (datetime, none_type,),  # noqa: E501
-            'trigger_rule': (TriggerRule,),  # noqa: E501
-            'extra_links': ([TaskExtraLinks],),  # noqa: E501
             'depends_on_past': (bool,),  # noqa: E501
-            'wait_for_downstream': (bool,),  # noqa: E501
-            'retries': (float,),  # noqa: E501
-            'queue': (str,),  # noqa: E501
+            'downstream_task_ids': ([str],),  # noqa: E501
+            'end_date': (datetime, none_type,),  # noqa: E501
+            'execution_timeout': (TimeDelta,),  # noqa: E501
+            'extra_links': ([TaskExtraLinks],),  # noqa: E501
+            'owner': (str,),  # noqa: E501
             'pool': (str,),  # noqa: E501
             'pool_slots': (float,),  # noqa: E501
-            'execution_timeout': (TimeDelta,),  # noqa: E501
+            'priority_weight': (float,),  # noqa: E501
+            'queue': (str,),  # noqa: E501
+            'retries': (float,),  # noqa: E501
             'retry_delay': (TimeDelta,),  # noqa: E501
             'retry_exponential_backoff': (bool,),  # noqa: E501
-            'priority_weight': (float,),  # noqa: E501
-            'weight_rule': (WeightRule,),  # noqa: E501
+            'start_date': (datetime,),  # noqa: E501
+            'sub_dag': (DAG,),  # noqa: E501
+            'task_id': (str,),  # noqa: E501
+            'template_fields': ([str],),  # noqa: E501
+            'trigger_rule': (TriggerRule,),  # noqa: E501
             'ui_color': (Color,),  # noqa: E501
             'ui_fgcolor': (Color,),  # noqa: E501
-            'template_fields': ([str],),  # noqa: E501
-            'sub_dag': (DAG,),  # noqa: E501
-            'downstream_task_ids': ([str],),  # noqa: E501
+            'wait_for_downstream': (bool,),  # noqa: E501
+            'weight_rule': (WeightRule,),  # noqa: E501
         }
 
     @cached_property
@@ -149,46 +132,46 @@ class Task(ModelNormal):
 
     attribute_map = {
         'class_ref': 'class_ref',  # noqa: E501
-        'task_id': 'task_id',  # noqa: E501
-        'owner': 'owner',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
-        'end_date': 'end_date',  # noqa: E501
-        'trigger_rule': 'trigger_rule',  # noqa: E501
-        'extra_links': 'extra_links',  # noqa: E501
         'depends_on_past': 'depends_on_past',  # noqa: E501
-        'wait_for_downstream': 'wait_for_downstream',  # noqa: E501
-        'retries': 'retries',  # noqa: E501
-        'queue': 'queue',  # noqa: E501
+        'downstream_task_ids': 'downstream_task_ids',  # noqa: E501
+        'end_date': 'end_date',  # noqa: E501
+        'execution_timeout': 'execution_timeout',  # noqa: E501
+        'extra_links': 'extra_links',  # noqa: E501
+        'owner': 'owner',  # noqa: E501
         'pool': 'pool',  # noqa: E501
         'pool_slots': 'pool_slots',  # noqa: E501
-        'execution_timeout': 'execution_timeout',  # noqa: E501
+        'priority_weight': 'priority_weight',  # noqa: E501
+        'queue': 'queue',  # noqa: E501
+        'retries': 'retries',  # noqa: E501
         'retry_delay': 'retry_delay',  # noqa: E501
         'retry_exponential_backoff': 'retry_exponential_backoff',  # noqa: E501
-        'priority_weight': 'priority_weight',  # noqa: E501
-        'weight_rule': 'weight_rule',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'sub_dag': 'sub_dag',  # noqa: E501
+        'task_id': 'task_id',  # noqa: E501
+        'template_fields': 'template_fields',  # noqa: E501
+        'trigger_rule': 'trigger_rule',  # noqa: E501
         'ui_color': 'ui_color',  # noqa: E501
         'ui_fgcolor': 'ui_fgcolor',  # noqa: E501
-        'template_fields': 'template_fields',  # noqa: E501
-        'sub_dag': 'sub_dag',  # noqa: E501
-        'downstream_task_ids': 'downstream_task_ids',  # noqa: E501
+        'wait_for_downstream': 'wait_for_downstream',  # noqa: E501
+        'weight_rule': 'weight_rule',  # noqa: E501
     }
 
     read_only_vars = {
-        'task_id',  # noqa: E501
-        'owner',  # noqa: E501
-        'start_date',  # noqa: E501
+        'depends_on_past',  # noqa: E501
+        'downstream_task_ids',  # noqa: E501
         'end_date',  # noqa: E501
         'extra_links',  # noqa: E501
-        'depends_on_past',  # noqa: E501
-        'wait_for_downstream',  # noqa: E501
-        'retries',  # noqa: E501
-        'queue',  # noqa: E501
+        'owner',  # noqa: E501
         'pool',  # noqa: E501
         'pool_slots',  # noqa: E501
-        'retry_exponential_backoff',  # noqa: E501
         'priority_weight',  # noqa: E501
+        'queue',  # noqa: E501
+        'retries',  # noqa: E501
+        'retry_exponential_backoff',  # noqa: E501
+        'start_date',  # noqa: E501
+        'task_id',  # noqa: E501
         'template_fields',  # noqa: E501
-        'downstream_task_ids',  # noqa: E501
+        'wait_for_downstream',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -230,28 +213,28 @@ class Task(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             class_ref (ClassReference): [optional]  # noqa: E501
-            task_id (str): [optional]  # noqa: E501
-            owner (str): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
-            trigger_rule (TriggerRule): [optional]  # noqa: E501
-            extra_links ([TaskExtraLinks]): [optional]  # noqa: E501
             depends_on_past (bool): [optional]  # noqa: E501
-            wait_for_downstream (bool): [optional]  # noqa: E501
-            retries (float): [optional]  # noqa: E501
-            queue (str): [optional]  # noqa: E501
+            downstream_task_ids ([str]): [optional]  # noqa: E501
+            end_date (datetime, none_type): [optional]  # noqa: E501
+            execution_timeout (TimeDelta): [optional]  # noqa: E501
+            extra_links ([TaskExtraLinks]): [optional]  # noqa: E501
+            owner (str): [optional]  # noqa: E501
             pool (str): [optional]  # noqa: E501
             pool_slots (float): [optional]  # noqa: E501
-            execution_timeout (TimeDelta): [optional]  # noqa: E501
+            priority_weight (float): [optional]  # noqa: E501
+            queue (str): [optional]  # noqa: E501
+            retries (float): [optional]  # noqa: E501
             retry_delay (TimeDelta): [optional]  # noqa: E501
             retry_exponential_backoff (bool): [optional]  # noqa: E501
-            priority_weight (float): [optional]  # noqa: E501
-            weight_rule (WeightRule): [optional]  # noqa: E501
+            start_date (datetime): [optional]  # noqa: E501
+            sub_dag (DAG): [optional]  # noqa: E501
+            task_id (str): [optional]  # noqa: E501
+            template_fields ([str]): [optional]  # noqa: E501
+            trigger_rule (TriggerRule): [optional]  # noqa: E501
             ui_color (Color): [optional]  # noqa: E501
             ui_fgcolor (Color): [optional]  # noqa: E501
-            template_fields ([str]): [optional]  # noqa: E501
-            sub_dag (DAG): [optional]  # noqa: E501
-            downstream_task_ids ([str]): [optional]  # noqa: E501
+            wait_for_downstream (bool): [optional]  # noqa: E501
+            weight_rule (WeightRule): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -334,28 +317,28 @@ class Task(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             class_ref (ClassReference): [optional]  # noqa: E501
-            task_id (str): [optional]  # noqa: E501
-            owner (str): [optional]  # noqa: E501
-            start_date (datetime): [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
-            trigger_rule (TriggerRule): [optional]  # noqa: E501
-            extra_links ([TaskExtraLinks]): [optional]  # noqa: E501
             depends_on_past (bool): [optional]  # noqa: E501
-            wait_for_downstream (bool): [optional]  # noqa: E501
-            retries (float): [optional]  # noqa: E501
-            queue (str): [optional]  # noqa: E501
+            downstream_task_ids ([str]): [optional]  # noqa: E501
+            end_date (datetime, none_type): [optional]  # noqa: E501
+            execution_timeout (TimeDelta): [optional]  # noqa: E501
+            extra_links ([TaskExtraLinks]): [optional]  # noqa: E501
+            owner (str): [optional]  # noqa: E501
             pool (str): [optional]  # noqa: E501
             pool_slots (float): [optional]  # noqa: E501
-            execution_timeout (TimeDelta): [optional]  # noqa: E501
+            priority_weight (float): [optional]  # noqa: E501
+            queue (str): [optional]  # noqa: E501
+            retries (float): [optional]  # noqa: E501
             retry_delay (TimeDelta): [optional]  # noqa: E501
             retry_exponential_backoff (bool): [optional]  # noqa: E501
-            priority_weight (float): [optional]  # noqa: E501
-            weight_rule (WeightRule): [optional]  # noqa: E501
+            start_date (datetime): [optional]  # noqa: E501
+            sub_dag (DAG): [optional]  # noqa: E501
+            task_id (str): [optional]  # noqa: E501
+            template_fields ([str]): [optional]  # noqa: E501
+            trigger_rule (TriggerRule): [optional]  # noqa: E501
             ui_color (Color): [optional]  # noqa: E501
             ui_fgcolor (Color): [optional]  # noqa: E501
-            template_fields ([str]): [optional]  # noqa: E501
-            sub_dag (DAG): [optional]  # noqa: E501
-            downstream_task_ids ([str]): [optional]  # noqa: E501
+            wait_for_downstream (bool): [optional]  # noqa: E501
+            weight_rule (WeightRule): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

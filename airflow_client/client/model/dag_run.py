@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -106,14 +89,14 @@ class DAGRun(ModelNormal):
         lazy_import()
         return {
             'dag_id': (str,),  # noqa: E501
-            'dag_run_id': (str, none_type,),  # noqa: E501
-            'logical_date': (datetime, none_type,),  # noqa: E501
-            'execution_date': (datetime, none_type,),  # noqa: E501
-            'start_date': (datetime, none_type,),  # noqa: E501
-            'end_date': (datetime, none_type,),  # noqa: E501
-            'state': (DagState,),  # noqa: E501
-            'external_trigger': (bool,),  # noqa: E501
             'conf': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'dag_run_id': (str, none_type,),  # noqa: E501
+            'end_date': (datetime, none_type,),  # noqa: E501
+            'execution_date': (datetime, none_type,),  # noqa: E501
+            'external_trigger': (bool,),  # noqa: E501
+            'logical_date': (datetime, none_type,),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
+            'state': (DagState,),  # noqa: E501
         }
 
     @cached_property
@@ -123,21 +106,21 @@ class DAGRun(ModelNormal):
 
     attribute_map = {
         'dag_id': 'dag_id',  # noqa: E501
-        'dag_run_id': 'dag_run_id',  # noqa: E501
-        'logical_date': 'logical_date',  # noqa: E501
-        'execution_date': 'execution_date',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
-        'end_date': 'end_date',  # noqa: E501
-        'state': 'state',  # noqa: E501
-        'external_trigger': 'external_trigger',  # noqa: E501
         'conf': 'conf',  # noqa: E501
+        'dag_run_id': 'dag_run_id',  # noqa: E501
+        'end_date': 'end_date',  # noqa: E501
+        'execution_date': 'execution_date',  # noqa: E501
+        'external_trigger': 'external_trigger',  # noqa: E501
+        'logical_date': 'logical_date',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'state': 'state',  # noqa: E501
     }
 
     read_only_vars = {
         'dag_id',  # noqa: E501
-        'start_date',  # noqa: E501
         'end_date',  # noqa: E501
         'external_trigger',  # noqa: E501
+        'start_date',  # noqa: E501
     }
 
     _composed_schemas = {}
@@ -181,14 +164,14 @@ class DAGRun(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dag_run_id (str, none_type): Run ID.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  If not provided, a value will be generated based on execution_date.  If the specified dag_run_id is in use, the creation request fails with an ALREADY_EXISTS error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
-            logical_date (datetime, none_type): The logical date (previously called execution date). This is the time or interval covered by this DAG run, according to the DAG definition.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
-            execution_date (datetime, none_type): The execution date. This is the same as logical_date, kept for backwards compatibility. If both this field and logical_date are provided but with different values, the request will fail with an BAD_REQUEST error. . [optional]  # noqa: E501
-            start_date (datetime, none_type): The start time. The time when DAG run was actually created. . [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
-            state (DagState): [optional]  # noqa: E501
-            external_trigger (bool): [optional] if omitted the server will use the default value of True  # noqa: E501
             conf ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): JSON object describing additional configuration parameters.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error. . [optional]  # noqa: E501
+            dag_run_id (str, none_type): Run ID.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  If not provided, a value will be generated based on execution_date.  If the specified dag_run_id is in use, the creation request fails with an ALREADY_EXISTS error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
+            end_date (datetime, none_type): [optional]  # noqa: E501
+            execution_date (datetime, none_type): The execution date. This is the same as logical_date, kept for backwards compatibility. If both this field and logical_date are provided but with different values, the request will fail with an BAD_REQUEST error. . [optional]  # noqa: E501
+            external_trigger (bool): [optional] if omitted the server will use the default value of True  # noqa: E501
+            logical_date (datetime, none_type): The logical date (previously called execution date). This is the time or interval covered by this DAG run, according to the DAG definition.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
+            start_date (datetime, none_type): The start time. The time when DAG run was actually created. . [optional]  # noqa: E501
+            state (DagState): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -271,14 +254,14 @@ class DAGRun(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dag_run_id (str, none_type): Run ID.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  If not provided, a value will be generated based on execution_date.  If the specified dag_run_id is in use, the creation request fails with an ALREADY_EXISTS error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
-            logical_date (datetime, none_type): The logical date (previously called execution date). This is the time or interval covered by this DAG run, according to the DAG definition.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
-            execution_date (datetime, none_type): The execution date. This is the same as logical_date, kept for backwards compatibility. If both this field and logical_date are provided but with different values, the request will fail with an BAD_REQUEST error. . [optional]  # noqa: E501
-            start_date (datetime, none_type): The start time. The time when DAG run was actually created. . [optional]  # noqa: E501
-            end_date (datetime, none_type): [optional]  # noqa: E501
-            state (DagState): [optional]  # noqa: E501
-            external_trigger (bool): [optional] if omitted the server will use the default value of True  # noqa: E501
             conf ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): JSON object describing additional configuration parameters.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error. . [optional]  # noqa: E501
+            dag_run_id (str, none_type): Run ID.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  If not provided, a value will be generated based on execution_date.  If the specified dag_run_id is in use, the creation request fails with an ALREADY_EXISTS error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
+            end_date (datetime, none_type): [optional]  # noqa: E501
+            execution_date (datetime, none_type): The execution date. This is the same as logical_date, kept for backwards compatibility. If both this field and logical_date are provided but with different values, the request will fail with an BAD_REQUEST error. . [optional]  # noqa: E501
+            external_trigger (bool): [optional] if omitted the server will use the default value of True  # noqa: E501
+            logical_date (datetime, none_type): The logical date (previously called execution date). This is the time or interval covered by this DAG run, according to the DAG definition.  The value of this field can be set only when creating the object. If you try to modify the field of an existing object, the request fails with an BAD_REQUEST error.  This together with DAG_ID are a unique key. . [optional]  # noqa: E501
+            start_date (datetime, none_type): The start time. The time when DAG run was actually created. . [optional]  # noqa: E501
+            state (DagState): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

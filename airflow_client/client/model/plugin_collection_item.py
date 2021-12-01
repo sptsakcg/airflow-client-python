@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -99,15 +82,15 @@ class PluginCollectionItem(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'number': (str,),  # noqa: E501
-            'name': (str,),  # noqa: E501
-            'hooks': ([str, none_type],),  # noqa: E501
-            'executors': ([str, none_type],),  # noqa: E501
-            'macros': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
-            'flask_blueprints': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
-            'appbuilder_views': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
             'appbuilder_menu_items': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
+            'appbuilder_views': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
+            'executors': ([str, none_type],),  # noqa: E501
+            'flask_blueprints': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
             'global_operator_extra_links': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
+            'hooks': ([str, none_type],),  # noqa: E501
+            'macros': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
+            'name': (str,),  # noqa: E501
+            'number': (str,),  # noqa: E501
             'operator_extra_links': ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type],),  # noqa: E501
             'source': (str, none_type,),  # noqa: E501
         }
@@ -118,15 +101,15 @@ class PluginCollectionItem(ModelNormal):
 
 
     attribute_map = {
-        'number': 'number',  # noqa: E501
-        'name': 'name',  # noqa: E501
-        'hooks': 'hooks',  # noqa: E501
-        'executors': 'executors',  # noqa: E501
-        'macros': 'macros',  # noqa: E501
-        'flask_blueprints': 'flask_blueprints',  # noqa: E501
-        'appbuilder_views': 'appbuilder_views',  # noqa: E501
         'appbuilder_menu_items': 'appbuilder_menu_items',  # noqa: E501
+        'appbuilder_views': 'appbuilder_views',  # noqa: E501
+        'executors': 'executors',  # noqa: E501
+        'flask_blueprints': 'flask_blueprints',  # noqa: E501
         'global_operator_extra_links': 'global_operator_extra_links',  # noqa: E501
+        'hooks': 'hooks',  # noqa: E501
+        'macros': 'macros',  # noqa: E501
+        'name': 'name',  # noqa: E501
+        'number': 'number',  # noqa: E501
         'operator_extra_links': 'operator_extra_links',  # noqa: E501
         'source': 'source',  # noqa: E501
     }
@@ -172,15 +155,15 @@ class PluginCollectionItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            number (str): The plugin number. [optional]  # noqa: E501
-            name (str): The name of the plugin. [optional]  # noqa: E501
-            hooks ([str, none_type]): The plugin hooks. [optional]  # noqa: E501
-            executors ([str, none_type]): The plugin executors. [optional]  # noqa: E501
-            macros ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The plugin macros. [optional]  # noqa: E501
-            flask_blueprints ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The flask blueprints. [optional]  # noqa: E501
-            appbuilder_views ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The appuilder views. [optional]  # noqa: E501
             appbuilder_menu_items ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The Flask Appbuilder menu items. [optional]  # noqa: E501
+            appbuilder_views ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The appuilder views. [optional]  # noqa: E501
+            executors ([str, none_type]): The plugin executors. [optional]  # noqa: E501
+            flask_blueprints ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The flask blueprints. [optional]  # noqa: E501
             global_operator_extra_links ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The global operator extra links. [optional]  # noqa: E501
+            hooks ([str, none_type]): The plugin hooks. [optional]  # noqa: E501
+            macros ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The plugin macros. [optional]  # noqa: E501
+            name (str): The name of the plugin. [optional]  # noqa: E501
+            number (str): The plugin number. [optional]  # noqa: E501
             operator_extra_links ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): Operator extra links. [optional]  # noqa: E501
             source (str, none_type): The plugin source. [optional]  # noqa: E501
         """
@@ -264,15 +247,15 @@ class PluginCollectionItem(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            number (str): The plugin number. [optional]  # noqa: E501
-            name (str): The name of the plugin. [optional]  # noqa: E501
-            hooks ([str, none_type]): The plugin hooks. [optional]  # noqa: E501
-            executors ([str, none_type]): The plugin executors. [optional]  # noqa: E501
-            macros ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The plugin macros. [optional]  # noqa: E501
-            flask_blueprints ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The flask blueprints. [optional]  # noqa: E501
-            appbuilder_views ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The appuilder views. [optional]  # noqa: E501
             appbuilder_menu_items ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The Flask Appbuilder menu items. [optional]  # noqa: E501
+            appbuilder_views ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The appuilder views. [optional]  # noqa: E501
+            executors ([str, none_type]): The plugin executors. [optional]  # noqa: E501
+            flask_blueprints ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The flask blueprints. [optional]  # noqa: E501
             global_operator_extra_links ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The global operator extra links. [optional]  # noqa: E501
+            hooks ([str, none_type]): The plugin hooks. [optional]  # noqa: E501
+            macros ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): The plugin macros. [optional]  # noqa: E501
+            name (str): The name of the plugin. [optional]  # noqa: E501
+            number (str): The plugin number. [optional]  # noqa: E501
             operator_extra_links ([{str: (bool, date, datetime, dict, float, int, list, str, none_type)}, none_type]): Operator extra links. [optional]  # noqa: E501
             source (str, none_type): The plugin source. [optional]  # noqa: E501
         """

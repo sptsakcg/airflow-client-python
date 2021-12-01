@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -100,21 +83,21 @@ class RelativeDelta(ModelNormal):
         """
         return {
             'type': (str,),  # noqa: E501
-            'years': (int,),  # noqa: E501
-            'months': (int,),  # noqa: E501
-            'days': (int,),  # noqa: E501
-            'leapdays': (int,),  # noqa: E501
-            'hours': (int,),  # noqa: E501
-            'minutes': (int,),  # noqa: E501
-            'seconds': (int,),  # noqa: E501
-            'microseconds': (int,),  # noqa: E501
-            'year': (int,),  # noqa: E501
-            'month': (int,),  # noqa: E501
             'day': (int,),  # noqa: E501
+            'days': (int,),  # noqa: E501
             'hour': (int,),  # noqa: E501
-            'minute': (int,),  # noqa: E501
-            'second': (int,),  # noqa: E501
+            'hours': (int,),  # noqa: E501
+            'leapdays': (int,),  # noqa: E501
             'microsecond': (int,),  # noqa: E501
+            'microseconds': (int,),  # noqa: E501
+            'minute': (int,),  # noqa: E501
+            'minutes': (int,),  # noqa: E501
+            'month': (int,),  # noqa: E501
+            'months': (int,),  # noqa: E501
+            'second': (int,),  # noqa: E501
+            'seconds': (int,),  # noqa: E501
+            'year': (int,),  # noqa: E501
+            'years': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -124,21 +107,21 @@ class RelativeDelta(ModelNormal):
 
     attribute_map = {
         'type': '__type',  # noqa: E501
-        'years': 'years',  # noqa: E501
-        'months': 'months',  # noqa: E501
-        'days': 'days',  # noqa: E501
-        'leapdays': 'leapdays',  # noqa: E501
-        'hours': 'hours',  # noqa: E501
-        'minutes': 'minutes',  # noqa: E501
-        'seconds': 'seconds',  # noqa: E501
-        'microseconds': 'microseconds',  # noqa: E501
-        'year': 'year',  # noqa: E501
-        'month': 'month',  # noqa: E501
         'day': 'day',  # noqa: E501
+        'days': 'days',  # noqa: E501
         'hour': 'hour',  # noqa: E501
-        'minute': 'minute',  # noqa: E501
-        'second': 'second',  # noqa: E501
+        'hours': 'hours',  # noqa: E501
+        'leapdays': 'leapdays',  # noqa: E501
         'microsecond': 'microsecond',  # noqa: E501
+        'microseconds': 'microseconds',  # noqa: E501
+        'minute': 'minute',  # noqa: E501
+        'minutes': 'minutes',  # noqa: E501
+        'month': 'month',  # noqa: E501
+        'months': 'months',  # noqa: E501
+        'second': 'second',  # noqa: E501
+        'seconds': 'seconds',  # noqa: E501
+        'year': 'year',  # noqa: E501
+        'years': 'years',  # noqa: E501
     }
 
     read_only_vars = {
@@ -148,26 +131,26 @@ class RelativeDelta(ModelNormal):
 
     @classmethod
     @convert_js_args_to_python_args
-    def _from_openapi_data(cls, type, years, months, days, leapdays, hours, minutes, seconds, microseconds, year, month, day, hour, minute, second, microsecond, *args, **kwargs):  # noqa: E501
+    def _from_openapi_data(cls, type, day, days, hour, hours, leapdays, microsecond, microseconds, minute, minutes, month, months, second, seconds, year, years, *args, **kwargs):  # noqa: E501
         """RelativeDelta - a model defined in OpenAPI
 
         Args:
             type (str):
-            years (int):
-            months (int):
-            days (int):
-            leapdays (int):
-            hours (int):
-            minutes (int):
-            seconds (int):
-            microseconds (int):
-            year (int):
-            month (int):
             day (int):
+            days (int):
             hour (int):
-            minute (int):
-            second (int):
+            hours (int):
+            leapdays (int):
             microsecond (int):
+            microseconds (int):
+            minute (int):
+            minutes (int):
+            month (int):
+            months (int):
+            second (int):
+            seconds (int):
+            year (int):
+            years (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -228,21 +211,21 @@ class RelativeDelta(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
-        self.years = years
-        self.months = months
-        self.days = days
-        self.leapdays = leapdays
-        self.hours = hours
-        self.minutes = minutes
-        self.seconds = seconds
-        self.microseconds = microseconds
-        self.year = year
-        self.month = month
         self.day = day
+        self.days = days
         self.hour = hour
-        self.minute = minute
-        self.second = second
+        self.hours = hours
+        self.leapdays = leapdays
         self.microsecond = microsecond
+        self.microseconds = microseconds
+        self.minute = minute
+        self.minutes = minutes
+        self.month = month
+        self.months = months
+        self.second = second
+        self.seconds = seconds
+        self.year = year
+        self.years = years
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \
@@ -263,26 +246,26 @@ class RelativeDelta(ModelNormal):
     ])
 
     @convert_js_args_to_python_args
-    def __init__(self, type, years, months, days, leapdays, hours, minutes, seconds, microseconds, year, month, day, hour, minute, second, microsecond, *args, **kwargs):  # noqa: E501
+    def __init__(self, type, day, days, hour, hours, leapdays, microsecond, microseconds, minute, minutes, month, months, second, seconds, year, years, *args, **kwargs):  # noqa: E501
         """RelativeDelta - a model defined in OpenAPI
 
         Args:
             type (str):
-            years (int):
-            months (int):
-            days (int):
-            leapdays (int):
-            hours (int):
-            minutes (int):
-            seconds (int):
-            microseconds (int):
-            year (int):
-            month (int):
             day (int):
+            days (int):
             hour (int):
-            minute (int):
-            second (int):
+            hours (int):
+            leapdays (int):
             microsecond (int):
+            microseconds (int):
+            minute (int):
+            minutes (int):
+            month (int):
+            months (int):
+            second (int):
+            seconds (int):
+            year (int):
+            years (int):
 
         Keyword Args:
             _check_type (bool): if True, values for parameters in openapi_types
@@ -341,21 +324,21 @@ class RelativeDelta(ModelNormal):
         self._visited_composed_classes = _visited_composed_classes + (self.__class__,)
 
         self.type = type
-        self.years = years
-        self.months = months
-        self.days = days
-        self.leapdays = leapdays
-        self.hours = hours
-        self.minutes = minutes
-        self.seconds = seconds
-        self.microseconds = microseconds
-        self.year = year
-        self.month = month
         self.day = day
+        self.days = days
         self.hour = hour
-        self.minute = minute
-        self.second = second
+        self.hours = hours
+        self.leapdays = leapdays
         self.microsecond = microsecond
+        self.microseconds = microseconds
+        self.minute = minute
+        self.minutes = minutes
+        self.month = month
+        self.months = months
+        self.second = second
+        self.seconds = seconds
+        self.year = year
+        self.years = years
         for var_name, var_value in kwargs.items():
             if var_name not in self.attribute_map and \
                         self._configuration is not None and \

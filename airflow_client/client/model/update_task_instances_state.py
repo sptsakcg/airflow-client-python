@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -104,13 +87,13 @@ class UpdateTaskInstancesState(ModelNormal):
         """
         return {
             'dry_run': (bool,),  # noqa: E501
-            'task_id': (str,),  # noqa: E501
             'execution_date': (str,),  # noqa: E501
-            'include_upstream': (bool,),  # noqa: E501
             'include_downstream': (bool,),  # noqa: E501
             'include_future': (bool,),  # noqa: E501
             'include_past': (bool,),  # noqa: E501
+            'include_upstream': (bool,),  # noqa: E501
             'new_state': (str,),  # noqa: E501
+            'task_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -120,13 +103,13 @@ class UpdateTaskInstancesState(ModelNormal):
 
     attribute_map = {
         'dry_run': 'dry_run',  # noqa: E501
-        'task_id': 'task_id',  # noqa: E501
         'execution_date': 'execution_date',  # noqa: E501
-        'include_upstream': 'include_upstream',  # noqa: E501
         'include_downstream': 'include_downstream',  # noqa: E501
         'include_future': 'include_future',  # noqa: E501
         'include_past': 'include_past',  # noqa: E501
+        'include_upstream': 'include_upstream',  # noqa: E501
         'new_state': 'new_state',  # noqa: E501
+        'task_id': 'task_id',  # noqa: E501
     }
 
     read_only_vars = {
@@ -171,13 +154,13 @@ class UpdateTaskInstancesState(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dry_run (bool): If set, don't actually run this operation. The response will contain a list of task instances planned to be affected, but won't be modified in any way. . [optional] if omitted the server will use the default value of True  # noqa: E501
-            task_id (str): The task ID.. [optional]  # noqa: E501
             execution_date (str): The execution date.. [optional]  # noqa: E501
-            include_upstream (bool): If set to true, upstream tasks are also affected.. [optional]  # noqa: E501
             include_downstream (bool): If set to true, downstream tasks are also affected.. [optional]  # noqa: E501
             include_future (bool): If set to True, also tasks from future DAG Runs are affected.. [optional]  # noqa: E501
             include_past (bool): If set to True, also tasks from past DAG Runs are affected.. [optional]  # noqa: E501
+            include_upstream (bool): If set to true, upstream tasks are also affected.. [optional]  # noqa: E501
             new_state (str): Expected new state.. [optional]  # noqa: E501
+            task_id (str): The task ID.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -260,13 +243,13 @@ class UpdateTaskInstancesState(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dry_run (bool): If set, don't actually run this operation. The response will contain a list of task instances planned to be affected, but won't be modified in any way. . [optional] if omitted the server will use the default value of True  # noqa: E501
-            task_id (str): The task ID.. [optional]  # noqa: E501
             execution_date (str): The execution date.. [optional]  # noqa: E501
-            include_upstream (bool): If set to true, upstream tasks are also affected.. [optional]  # noqa: E501
             include_downstream (bool): If set to true, downstream tasks are also affected.. [optional]  # noqa: E501
             include_future (bool): If set to True, also tasks from future DAG Runs are affected.. [optional]  # noqa: E501
             include_past (bool): If set to True, also tasks from past DAG Runs are affected.. [optional]  # noqa: E501
+            include_upstream (bool): If set to true, upstream tasks are also affected.. [optional]  # noqa: E501
             new_state (str): Expected new state.. [optional]  # noqa: E501
+            task_id (str): The task ID.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

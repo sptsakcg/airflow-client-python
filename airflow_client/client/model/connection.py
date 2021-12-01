@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -107,14 +90,14 @@ class Connection(ModelComposed):
         """
         lazy_import()
         return {
-            'connection_id': (str,),  # noqa: E501
             'conn_type': (str,),  # noqa: E501
+            'connection_id': (str,),  # noqa: E501
             'host': (str, none_type,),  # noqa: E501
             'login': (str, none_type,),  # noqa: E501
-            'schema': (str, none_type,),  # noqa: E501
             'port': (int, none_type,),  # noqa: E501
-            'password': (str,),  # noqa: E501
+            'schema': (str, none_type,),  # noqa: E501
             'extra': (str, none_type,),  # noqa: E501
+            'password': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -123,14 +106,14 @@ class Connection(ModelComposed):
 
 
     attribute_map = {
-        'connection_id': 'connection_id',  # noqa: E501
         'conn_type': 'conn_type',  # noqa: E501
+        'connection_id': 'connection_id',  # noqa: E501
         'host': 'host',  # noqa: E501
         'login': 'login',  # noqa: E501
-        'schema': 'schema',  # noqa: E501
         'port': 'port',  # noqa: E501
-        'password': 'password',  # noqa: E501
+        'schema': 'schema',  # noqa: E501
         'extra': 'extra',  # noqa: E501
+        'password': 'password',  # noqa: E501
     }
 
     read_only_vars = {
@@ -172,14 +155,14 @@ class Connection(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            connection_id (str): The connection ID.. [optional]  # noqa: E501
             conn_type (str): The connection type.. [optional]  # noqa: E501
+            connection_id (str): The connection ID.. [optional]  # noqa: E501
             host (str, none_type): Host of the connection.. [optional]  # noqa: E501
             login (str, none_type): Login of the connection.. [optional]  # noqa: E501
-            schema (str, none_type): Schema of the connection.. [optional]  # noqa: E501
             port (int, none_type): Port of the connection.. [optional]  # noqa: E501
-            password (str): Password of the connection.. [optional]  # noqa: E501
+            schema (str, none_type): Schema of the connection.. [optional]  # noqa: E501
             extra (str, none_type): Other values that cannot be put into another field, e.g. RSA keys.. [optional]  # noqa: E501
+            password (str): Password of the connection.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -279,14 +262,14 @@ class Connection(ModelComposed):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            connection_id (str): The connection ID.. [optional]  # noqa: E501
             conn_type (str): The connection type.. [optional]  # noqa: E501
+            connection_id (str): The connection ID.. [optional]  # noqa: E501
             host (str, none_type): Host of the connection.. [optional]  # noqa: E501
             login (str, none_type): Login of the connection.. [optional]  # noqa: E501
-            schema (str, none_type): Schema of the connection.. [optional]  # noqa: E501
             port (int, none_type): Port of the connection.. [optional]  # noqa: E501
-            password (str): Password of the connection.. [optional]  # noqa: E501
+            schema (str, none_type): Schema of the connection.. [optional]  # noqa: E501
             extra (str, none_type): Other values that cannot be put into another field, e.g. RSA keys.. [optional]  # noqa: E501
+            password (str): Password of the connection.. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

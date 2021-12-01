@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -114,25 +97,25 @@ class DAGDetail(ModelComposed):
         lazy_import()
         return {
             'dag_id': (str,),  # noqa: E501
-            'root_dag_id': (str, none_type,),  # noqa: E501
-            'is_paused': (bool, none_type,),  # noqa: E501
-            'is_active': (bool, none_type,),  # noqa: E501
-            'is_subdag': (bool,),  # noqa: E501
-            'fileloc': (str,),  # noqa: E501
-            'file_token': (str,),  # noqa: E501
-            'owners': ([str],),  # noqa: E501
             'description': (str, none_type,),  # noqa: E501
+            'file_token': (str,),  # noqa: E501
+            'fileloc': (str,),  # noqa: E501
+            'is_active': (bool, none_type,),  # noqa: E501
+            'is_paused': (bool, none_type,),  # noqa: E501
+            'is_subdag': (bool,),  # noqa: E501
+            'owners': ([str],),  # noqa: E501
+            'root_dag_id': (str, none_type,),  # noqa: E501
             'schedule_interval': (ScheduleInterval,),  # noqa: E501
             'tags': ([Tag], none_type,),  # noqa: E501
-            'timezone': (str,),  # noqa: E501
             'catchup': (bool,),  # noqa: E501
-            'orientation': (str,),  # noqa: E501
             'concurrency': (float,),  # noqa: E501
-            'start_date': (datetime, none_type,),  # noqa: E501
             'dag_run_timeout': (TimeDelta,),  # noqa: E501
-            'doc_md': (str, none_type,),  # noqa: E501
             'default_view': (str,),  # noqa: E501
+            'doc_md': (str, none_type,),  # noqa: E501
+            'orientation': (str,),  # noqa: E501
             'params': ({str: (bool, date, datetime, dict, float, int, list, str, none_type)},),  # noqa: E501
+            'start_date': (datetime, none_type,),  # noqa: E501
+            'timezone': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -142,44 +125,44 @@ class DAGDetail(ModelComposed):
 
     attribute_map = {
         'dag_id': 'dag_id',  # noqa: E501
-        'root_dag_id': 'root_dag_id',  # noqa: E501
-        'is_paused': 'is_paused',  # noqa: E501
-        'is_active': 'is_active',  # noqa: E501
-        'is_subdag': 'is_subdag',  # noqa: E501
-        'fileloc': 'fileloc',  # noqa: E501
-        'file_token': 'file_token',  # noqa: E501
-        'owners': 'owners',  # noqa: E501
         'description': 'description',  # noqa: E501
+        'file_token': 'file_token',  # noqa: E501
+        'fileloc': 'fileloc',  # noqa: E501
+        'is_active': 'is_active',  # noqa: E501
+        'is_paused': 'is_paused',  # noqa: E501
+        'is_subdag': 'is_subdag',  # noqa: E501
+        'owners': 'owners',  # noqa: E501
+        'root_dag_id': 'root_dag_id',  # noqa: E501
         'schedule_interval': 'schedule_interval',  # noqa: E501
         'tags': 'tags',  # noqa: E501
-        'timezone': 'timezone',  # noqa: E501
         'catchup': 'catchup',  # noqa: E501
-        'orientation': 'orientation',  # noqa: E501
         'concurrency': 'concurrency',  # noqa: E501
-        'start_date': 'start_date',  # noqa: E501
         'dag_run_timeout': 'dag_run_timeout',  # noqa: E501
-        'doc_md': 'doc_md',  # noqa: E501
         'default_view': 'default_view',  # noqa: E501
+        'doc_md': 'doc_md',  # noqa: E501
+        'orientation': 'orientation',  # noqa: E501
         'params': 'params',  # noqa: E501
+        'start_date': 'start_date',  # noqa: E501
+        'timezone': 'timezone',  # noqa: E501
     }
 
     read_only_vars = {
         'dag_id',  # noqa: E501
-        'root_dag_id',  # noqa: E501
+        'description',  # noqa: E501
+        'file_token',  # noqa: E501
+        'fileloc',  # noqa: E501
         'is_active',  # noqa: E501
         'is_subdag',  # noqa: E501
-        'fileloc',  # noqa: E501
-        'file_token',  # noqa: E501
         'owners',  # noqa: E501
-        'description',  # noqa: E501
+        'root_dag_id',  # noqa: E501
         'tags',  # noqa: E501
         'catchup',  # noqa: E501
-        'orientation',  # noqa: E501
         'concurrency',  # noqa: E501
-        'start_date',  # noqa: E501
-        'doc_md',  # noqa: E501
         'default_view',  # noqa: E501
+        'doc_md',  # noqa: E501
+        'orientation',  # noqa: E501
         'params',  # noqa: E501
+        'start_date',  # noqa: E501
     }
 
     @classmethod
@@ -219,25 +202,25 @@ class DAGDetail(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dag_id (str): The ID of the DAG.. [optional]  # noqa: E501
-            root_dag_id (str, none_type): If the DAG is SubDAG then it is the top level DAG identifier. Otherwise, null.. [optional]  # noqa: E501
-            is_paused (bool, none_type): Whether the DAG is paused.. [optional]  # noqa: E501
-            is_active (bool, none_type): Whether the DAG is currently seen by the scheduler(s).. [optional]  # noqa: E501
-            is_subdag (bool): Whether the DAG is SubDAG.. [optional]  # noqa: E501
-            fileloc (str): The absolute path to the file.. [optional]  # noqa: E501
-            file_token (str): The key containing the encrypted path to the file. Encryption and decryption take place only on the server. This prevents the client from reading an non-DAG file. This also ensures API extensibility, because the format of encrypted data may change. . [optional]  # noqa: E501
-            owners ([str]): [optional]  # noqa: E501
             description (str, none_type): User-provided DAG description, which can consist of several sentences or paragraphs that describe DAG contents. . [optional]  # noqa: E501
+            file_token (str): The key containing the encrypted path to the file. Encryption and decryption take place only on the server. This prevents the client from reading an non-DAG file. This also ensures API extensibility, because the format of encrypted data may change. . [optional]  # noqa: E501
+            fileloc (str): The absolute path to the file.. [optional]  # noqa: E501
+            is_active (bool, none_type): Whether the DAG is currently seen by the scheduler(s).. [optional]  # noqa: E501
+            is_paused (bool, none_type): Whether the DAG is paused.. [optional]  # noqa: E501
+            is_subdag (bool): Whether the DAG is SubDAG.. [optional]  # noqa: E501
+            owners ([str]): [optional]  # noqa: E501
+            root_dag_id (str, none_type): If the DAG is SubDAG then it is the top level DAG identifier. Otherwise, null.. [optional]  # noqa: E501
             schedule_interval (ScheduleInterval): [optional]  # noqa: E501
             tags ([Tag], none_type): List of tags.. [optional]  # noqa: E501
-            timezone (str): [optional]  # noqa: E501
             catchup (bool): [optional]  # noqa: E501
-            orientation (str): [optional]  # noqa: E501
             concurrency (float): [optional]  # noqa: E501
-            start_date (datetime, none_type): [optional]  # noqa: E501
             dag_run_timeout (TimeDelta): [optional]  # noqa: E501
-            doc_md (str, none_type): [optional]  # noqa: E501
             default_view (str): [optional]  # noqa: E501
+            doc_md (str, none_type): [optional]  # noqa: E501
+            orientation (str): [optional]  # noqa: E501
             params ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            start_date (datetime, none_type): [optional]  # noqa: E501
+            timezone (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -338,25 +321,25 @@ class DAGDetail(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             dag_id (str): The ID of the DAG.. [optional]  # noqa: E501
-            root_dag_id (str, none_type): If the DAG is SubDAG then it is the top level DAG identifier. Otherwise, null.. [optional]  # noqa: E501
-            is_paused (bool, none_type): Whether the DAG is paused.. [optional]  # noqa: E501
-            is_active (bool, none_type): Whether the DAG is currently seen by the scheduler(s).. [optional]  # noqa: E501
-            is_subdag (bool): Whether the DAG is SubDAG.. [optional]  # noqa: E501
-            fileloc (str): The absolute path to the file.. [optional]  # noqa: E501
-            file_token (str): The key containing the encrypted path to the file. Encryption and decryption take place only on the server. This prevents the client from reading an non-DAG file. This also ensures API extensibility, because the format of encrypted data may change. . [optional]  # noqa: E501
-            owners ([str]): [optional]  # noqa: E501
             description (str, none_type): User-provided DAG description, which can consist of several sentences or paragraphs that describe DAG contents. . [optional]  # noqa: E501
+            file_token (str): The key containing the encrypted path to the file. Encryption and decryption take place only on the server. This prevents the client from reading an non-DAG file. This also ensures API extensibility, because the format of encrypted data may change. . [optional]  # noqa: E501
+            fileloc (str): The absolute path to the file.. [optional]  # noqa: E501
+            is_active (bool, none_type): Whether the DAG is currently seen by the scheduler(s).. [optional]  # noqa: E501
+            is_paused (bool, none_type): Whether the DAG is paused.. [optional]  # noqa: E501
+            is_subdag (bool): Whether the DAG is SubDAG.. [optional]  # noqa: E501
+            owners ([str]): [optional]  # noqa: E501
+            root_dag_id (str, none_type): If the DAG is SubDAG then it is the top level DAG identifier. Otherwise, null.. [optional]  # noqa: E501
             schedule_interval (ScheduleInterval): [optional]  # noqa: E501
             tags ([Tag], none_type): List of tags.. [optional]  # noqa: E501
-            timezone (str): [optional]  # noqa: E501
             catchup (bool): [optional]  # noqa: E501
-            orientation (str): [optional]  # noqa: E501
             concurrency (float): [optional]  # noqa: E501
-            start_date (datetime, none_type): [optional]  # noqa: E501
             dag_run_timeout (TimeDelta): [optional]  # noqa: E501
-            doc_md (str, none_type): [optional]  # noqa: E501
             default_view (str): [optional]  # noqa: E501
+            doc_md (str, none_type): [optional]  # noqa: E501
+            orientation (str): [optional]  # noqa: E501
             params ({str: (bool, date, datetime, dict, float, int, list, str, none_type)}): [optional]  # noqa: E501
+            start_date (datetime, none_type): [optional]  # noqa: E501
+            timezone (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

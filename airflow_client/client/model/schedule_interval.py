@@ -1,20 +1,3 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-#   http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-
 """
     Airflow API (Stable)
 
@@ -111,20 +94,20 @@ class ScheduleInterval(ModelComposed):
         return {
             'type': (str,),  # noqa: E501
             'days': (int,),  # noqa: E501
-            'seconds': (int,),  # noqa: E501
             'microseconds': (int,),  # noqa: E501
-            'years': (int,),  # noqa: E501
-            'months': (int,),  # noqa: E501
-            'leapdays': (int,),  # noqa: E501
-            'hours': (int,),  # noqa: E501
-            'minutes': (int,),  # noqa: E501
-            'year': (int,),  # noqa: E501
-            'month': (int,),  # noqa: E501
+            'seconds': (int,),  # noqa: E501
             'day': (int,),  # noqa: E501
             'hour': (int,),  # noqa: E501
-            'minute': (int,),  # noqa: E501
-            'second': (int,),  # noqa: E501
+            'hours': (int,),  # noqa: E501
+            'leapdays': (int,),  # noqa: E501
             'microsecond': (int,),  # noqa: E501
+            'minute': (int,),  # noqa: E501
+            'minutes': (int,),  # noqa: E501
+            'month': (int,),  # noqa: E501
+            'months': (int,),  # noqa: E501
+            'second': (int,),  # noqa: E501
+            'year': (int,),  # noqa: E501
+            'years': (int,),  # noqa: E501
             'value': (str,),  # noqa: E501
         }
 
@@ -143,20 +126,20 @@ class ScheduleInterval(ModelComposed):
     attribute_map = {
         'type': '__type',  # noqa: E501
         'days': 'days',  # noqa: E501
-        'seconds': 'seconds',  # noqa: E501
         'microseconds': 'microseconds',  # noqa: E501
-        'years': 'years',  # noqa: E501
-        'months': 'months',  # noqa: E501
-        'leapdays': 'leapdays',  # noqa: E501
-        'hours': 'hours',  # noqa: E501
-        'minutes': 'minutes',  # noqa: E501
-        'year': 'year',  # noqa: E501
-        'month': 'month',  # noqa: E501
+        'seconds': 'seconds',  # noqa: E501
         'day': 'day',  # noqa: E501
         'hour': 'hour',  # noqa: E501
-        'minute': 'minute',  # noqa: E501
-        'second': 'second',  # noqa: E501
+        'hours': 'hours',  # noqa: E501
+        'leapdays': 'leapdays',  # noqa: E501
         'microsecond': 'microsecond',  # noqa: E501
+        'minute': 'minute',  # noqa: E501
+        'minutes': 'minutes',  # noqa: E501
+        'month': 'month',  # noqa: E501
+        'months': 'months',  # noqa: E501
+        'second': 'second',  # noqa: E501
+        'year': 'year',  # noqa: E501
+        'years': 'years',  # noqa: E501
         'value': 'value',  # noqa: E501
     }
 
@@ -201,20 +184,20 @@ class ScheduleInterval(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             days (int): [optional]  # noqa: E501
-            seconds (int): [optional]  # noqa: E501
             microseconds (int): [optional]  # noqa: E501
-            years (int): [optional]  # noqa: E501
-            months (int): [optional]  # noqa: E501
-            leapdays (int): [optional]  # noqa: E501
-            hours (int): [optional]  # noqa: E501
-            minutes (int): [optional]  # noqa: E501
-            year (int): [optional]  # noqa: E501
-            month (int): [optional]  # noqa: E501
+            seconds (int): [optional]  # noqa: E501
             day (int): [optional]  # noqa: E501
             hour (int): [optional]  # noqa: E501
-            minute (int): [optional]  # noqa: E501
-            second (int): [optional]  # noqa: E501
+            hours (int): [optional]  # noqa: E501
+            leapdays (int): [optional]  # noqa: E501
             microsecond (int): [optional]  # noqa: E501
+            minute (int): [optional]  # noqa: E501
+            minutes (int): [optional]  # noqa: E501
+            month (int): [optional]  # noqa: E501
+            months (int): [optional]  # noqa: E501
+            second (int): [optional]  # noqa: E501
+            year (int): [optional]  # noqa: E501
+            years (int): [optional]  # noqa: E501
             value (str): [optional]  # noqa: E501
         """
 
@@ -317,20 +300,20 @@ class ScheduleInterval(ModelComposed):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             days (int): [optional]  # noqa: E501
-            seconds (int): [optional]  # noqa: E501
             microseconds (int): [optional]  # noqa: E501
-            years (int): [optional]  # noqa: E501
-            months (int): [optional]  # noqa: E501
-            leapdays (int): [optional]  # noqa: E501
-            hours (int): [optional]  # noqa: E501
-            minutes (int): [optional]  # noqa: E501
-            year (int): [optional]  # noqa: E501
-            month (int): [optional]  # noqa: E501
+            seconds (int): [optional]  # noqa: E501
             day (int): [optional]  # noqa: E501
             hour (int): [optional]  # noqa: E501
-            minute (int): [optional]  # noqa: E501
-            second (int): [optional]  # noqa: E501
+            hours (int): [optional]  # noqa: E501
+            leapdays (int): [optional]  # noqa: E501
             microsecond (int): [optional]  # noqa: E501
+            minute (int): [optional]  # noqa: E501
+            minutes (int): [optional]  # noqa: E501
+            month (int): [optional]  # noqa: E501
+            months (int): [optional]  # noqa: E501
+            second (int): [optional]  # noqa: E501
+            year (int): [optional]  # noqa: E501
+            years (int): [optional]  # noqa: E501
             value (str): [optional]  # noqa: E501
         """
 
